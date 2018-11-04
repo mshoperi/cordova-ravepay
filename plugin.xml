@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-ravepay" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ravepay</name>
+    <js-module name="ravepay" src="www/ravepay.js">
+        <clobbers target="cordova.plugins" />
+    </js-module>
+    <platform name="android">
+        <framework custom="true" src="rave.gradle" type="gradleReference" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="RavePaycall">
+                <param name="android-package" value="cordova.plugin.ravepay.ravepay" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/ravepay.java" target-dir="src/cordova/plugin/ravepay/ravepay" />
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ravepay">
+                <param name="ios-package" value="ravepay" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ravepay.m" />
+        <framework src="IQKeyboardManagerSwift" type="podspec" spec="~> 1.0.0" />
+        <framework src="Alamofire" type="podspec" spec="~> 1.0.0" />
+        <framework src="SwiftValidator" type="podspec" spec="~> 1.0.0" />
+        <framework src="BSErrorMessageView" type="podspec" spec="~> 1.0.0" />
+        <framework src="KVNProgress" type="podspec" spec="~> 1.0.0" />
+        <framework src="PopupDialog" type="podspec" spec="~> 1.0.0" />
+        <framework src="Shimmer" type="podspec" spec="~> 1.0.0" />
+        <framework src="CreditCardValidator" type="podspec" spec="~> 1.0.0" />        
+    </platform>
+</plugin>

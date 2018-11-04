@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-ravepay",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-ravepay",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Dakarai Mshoperi",
+  "license": "MIT"
+}
